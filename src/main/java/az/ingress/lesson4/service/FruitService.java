@@ -1,22 +1,19 @@
 package az.ingress.lesson4.service;
 
-import az.ingress.lesson4.dto.FruitRequestDto;
+import az.ingress.lesson4.dto.FruitCreateRequestDto;
 import az.ingress.lesson4.dto.FruitResponseDto;
+import az.ingress.lesson4.dto.FruitUpdateRequestDto;
 
 import java.util.List;
 
 public interface FruitService {
+    List<FruitResponseDto> getAll(Integer from, Integer to);
 
-    List<FruitResponseDto> list(Integer from, Integer to);
+    FruitResponseDto getById(Long id);
 
-    FruitRequestDto get(Long id);
+    FruitResponseDto create(FruitCreateRequestDto fruitDto);
 
+    FruitResponseDto updateById(Long id, FruitUpdateRequestDto fruitDto);
 
-    FruitResponseDto create(FruitRequestDto fruitDto);
-
-
-    FruitRequestDto update(Long id, FruitRequestDto fruitDto);
-
-    void delete(Long id);
-
+    void deleteById(Long id);
 }
